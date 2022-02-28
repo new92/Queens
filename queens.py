@@ -1,15 +1,4 @@
-#!/usr/bin/env python3
-
-"""
-N queens problem.
-
-The (well-known) problem is due to Niklaus Wirth.
-
-This solution is inspired by Dijkstra (Structured Programming).  It is
-a classic recursive backtracking approach.
-"""
-
-N = 8                                   # Default; command line overrides
+N = 8                                   
 
 class Queens:
 
@@ -19,13 +8,13 @@ class Queens:
 
     def reset(self):
         n = self.n
-        self.y = [None] * n             # Where is the queen in column x
-        self.row = [0] * n              # Is row[y] safe?
-        self.up = [0] * (2*n-1)         # Is upward diagonal[x-y] safe?
-        self.down = [0] * (2*n-1)       # Is downward diagonal[x+y] safe?
-        self.nfound = 0                 # Instrumentation
+        self.y = [None] * n             
+        self.row = [0] * n              
+        self.up = [0] * (2*n-1)         
+        self.down = [0] * (2*n-1)       
+        self.nfound = 0                 
 
-    def solve(self, x=0):               # Recursive solver
+    def solve(self, x=0):               
         for y in range(self.n):
             if self.safe(x, y):
                 self.place(x, y)
@@ -50,7 +39,7 @@ class Queens:
         self.up[x-y] = 0
         self.down[x+y] = 0
 
-    silent = 0                          # If true, count solutions only
+    silent = 0                          
 
     def display(self):
         self.nfound = self.nfound + 1
