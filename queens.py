@@ -1,5 +1,6 @@
 N = 8                                   
 
+#Class 
 class Queens:
 
     def __init__(self, n=N):
@@ -56,6 +57,8 @@ class Queens:
             print('|')
         print('+-' + '--'*self.n + '+')
 
+#End of the class 
+        
 def main():
     import sys
     silent = 0
@@ -72,3 +75,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#End of the program 
